@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Whatsapp Link Generator</title>
+    <style>
+        .display {
+            display:none;
+        }
+    </style>
+</head>
+<body>
+    <div class="w3-container w3-border" style="width: 55%; min-height: 200px; margin:25% auto; padding-top: 20px;">
+    <h2 class="w3-center">Whatsapp Link Generator</h2>
+    <label>Número</label>
+    <input id="numero" type="text" class='w3-input' placeholder="+556199665-4758">
+    <br>
+    <label>Mensagem</label>
+    <input id="text" type="text" class='w3-input' placeholder="Mensagem">
+    <br>
+    <label class="display" id='link2'>Link:</label>
+    <input class="display" id="link" class="w3-input" type="text">
+    <br><br>
+    <input id="send" type="submit" class='w3-btn w3-btn:hover w3-blue-grey' value="Gerar">
+    </div>
+    
+
+    <script>
+        const numero = document.getElementById("numero");
+        const texto = document.getElementById("text");
+        const btn = document.getElementById("send");
+        const link = document.getElementById("link");
+        const link2 = document.getElementById("link2");
+        btn.addEventListener("click", function () {
+            link2.style.display = "inline-block"
+            link.style.display = "inline-block"
+            link.value ="https://api.whatsapp.com/send?phone="+numero.value+"&text="+texto.value;
+        })
+    </script>
+</body>
+</html>
